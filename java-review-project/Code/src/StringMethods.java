@@ -75,7 +75,7 @@ public class StringMethods {
 
         for(int i = 0 ; i < str.length(); i++) {
 
-            if(!unique.contains("" + str.charAt(i)) && freqOfChar(str, str.charAt(i)) > 1) {
+            if(!unique.contains(str.substring(i, i+1)) && freqOfChar(str, str.charAt(i)) > 1) {
                 unique += "" + str.charAt(i);
             }
         }

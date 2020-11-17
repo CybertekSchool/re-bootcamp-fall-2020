@@ -6,8 +6,9 @@ public class StringMethods {
         System.out.println();
 
         freqOfEachChar("aaapppple");
+        System.out.println();
 
-
+        System.out.println(getOnlyUniqueValues("aaaabbcdddefffg"));
     }
 
     // freqency of chars
@@ -42,6 +43,26 @@ public class StringMethods {
             }
         }
 
+    }
+
+    // Take a String and return only unique values
+    // aaaabbcdddefffg -> ceg
+
+    public static String getOnlyUniqueValues(String str) {
+
+        String unique = "";
+
+        for(int i = 0 ; i < str.length(); i++) {
+
+            // if we didn't have freqOfChar declared
+            // the nested loop would be here
+
+            if(freqOfChar(str, str.charAt(i)) == 1) {
+                unique += "" + str.charAt(i);
+            }
+        }
+
+        return unique;
     }
 
 }

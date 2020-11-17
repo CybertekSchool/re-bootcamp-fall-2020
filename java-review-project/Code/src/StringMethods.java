@@ -9,6 +9,8 @@ public class StringMethods {
         System.out.println();
 
         System.out.println(getOnlyUniqueValues("aaaabbcdddefffg"));
+        System.out.println();
+        System.out.println(getOnlyDupValues("aaaabbcdddefffg"));
     }
 
     // freqency of chars
@@ -64,5 +66,22 @@ public class StringMethods {
 
         return unique;
     }
+
+    // Take a String and return only duplicate values
+
+    public static String getOnlyDupValues(String str) {
+
+        String unique = "";
+
+        for(int i = 0 ; i < str.length(); i++) {
+
+            if(!unique.contains("" + str.charAt(i)) && freqOfChar(str, str.charAt(i)) > 1) {
+                unique += "" + str.charAt(i);
+            }
+        }
+
+        return unique;
+    }
+
 
 }
